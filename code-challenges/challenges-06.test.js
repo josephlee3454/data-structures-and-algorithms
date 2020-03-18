@@ -130,10 +130,10 @@ const totalCharacters = (arr) => {
       charCount++;
     }
     if (character, childeren !==[]){
-      charCount.childeren.forEach(childe => charCount++)
+      character.children.forEach(child => charCount++);
     }
   });
-  return charcountcd 
+  return charcount;
 };
 
 /* ------------------------------------------------------------------------------------------------
