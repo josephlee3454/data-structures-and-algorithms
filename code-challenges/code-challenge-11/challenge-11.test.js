@@ -10,6 +10,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
+  let regex = /^\d{4}$/;
+  return regex.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,6 +32,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  let regex = /^(\w+|\w+\.\w+)@\w*\.(net|com|org)$/;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,6 +59,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  let regex = /^\d{10}$|^\d{6}-\d{4}$|^\d{3}\s\d{3}\s\d{4}$|^\d{3}-\d{3}-\d{4}$|^\d{3}-\d{3}\s\d{4}$|^\d{3}-\d{7}$|^\d{3}\s\d{3}-\d{4}$|^\(\d{3}\)\d{3}\s\d{4}$|^\(\d{3}\)\s\d{3}-\d{4}$|^\d{3}\s\d{7}$/;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,6 +74,11 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
+  let regex = /\/\w*/g;
+  elements.forEach(str => {
+    closingsTags.push(str.match(regex));
+  });
+  return closingTags;
 };
 
 /* ------------------------------------------------------------------------------------------------
